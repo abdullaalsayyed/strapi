@@ -305,7 +305,7 @@ module.exports = function (strapi) {
               utilsModels.defineAssociations(model.toLowerCase(), definition, details, name);
 
               if (_.isEmpty(verbose)) {
-                definition.loadedModel[name].type = utils(instance).convertType(details.type);
+                definition.loadedModel[name].type = utils(instance).convertType(details.type_mongo || details.type);
               }
 
               switch (verbose) {

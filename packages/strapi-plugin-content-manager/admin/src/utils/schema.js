@@ -28,6 +28,7 @@ const generateSchema = (responses) => {
       label: upperFirst(attribute),
       description: '',
       type: value.type || 'string',
+      type_render: value.type_render || value.type || 'string'
     }));
 
     // Select fields displayed in list view

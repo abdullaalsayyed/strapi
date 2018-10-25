@@ -793,6 +793,54 @@
         ]
       }
     },
+    "location": {
+      "baseSettings": {
+        "items": [
+          {
+            "label": {
+              "id": "content-type-builder.form.attribute.item.location.name"
+            },
+            "name": "name",
+            "type": "string",
+            "value": "",
+            "validations": {
+              "required": true
+            }
+          }
+        ]
+      },
+      "advancedSettings": {
+        "items": [
+          {
+            "title": {
+              "id": "content-type-builder.form.attribute.item.settings.name"
+            },
+            "label": {
+              "id": "content-type-builder.form.attribute.item.requiredField"
+            },
+            "name": "params.required",
+            "type": "checkbox",
+            "value": false,
+            "validations": {},
+            "inputDescription": {
+              "id": "content-type-builder.form.attribute.item.requiredField.description"
+            }
+          },
+          {
+            "label": {
+              "id": "content-type-builder.form.attribute.item.uniqueField"
+            },
+            "name": "params.unique",
+            "type": "checkbox",
+            "value": false,
+            "validations": {},
+            "inputDescription": {
+              "id": "content-type-builder.form.attribute.item.uniqueField.description"
+            }
+          }
+        ]
+      }
+    },
     "media": {
       "baseSettings": {
         "items": [

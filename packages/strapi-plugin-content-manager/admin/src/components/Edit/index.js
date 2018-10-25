@@ -49,8 +49,10 @@ const getInputType = (type = '') => {
       return 'file';
     case 'json':
       return 'json';
+    case 'location':
+      return 'location';
     default:
-      return 'text';
+      return type || 'text';
   }
 };
 
@@ -151,7 +153,7 @@ class Edit extends React.PureComponent {
         placeholder={get(layout, 'placeholder') || details.placeholder || ''}
         resetProps={this.props.resetProps}
         selectOptions={get(this.props.attributes, [attr, 'enum'])}
-        type={type}
+        type={get(layout, 'type_render', this.getInputType(details.type_render))}
         validations={this.getInputValidations(attr)}
         value={this.props.record[attr]}
       />

@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { isEmpty, isObject, merge } from 'lodash';
 
 // Design
+import InputLocation from '../custom/locationInput';
 import InputAddonWithErrors from 'components/InputAddonWithErrors';
 import InputCheckboxWithErrors from 'components/InputCheckboxWithErrors';
 import InputDateWithErrors from 'components/InputDateWithErrors';
@@ -36,6 +37,7 @@ const inputs = {
   select: InputSelectWithErrors,
   string: InputTextWithErrors,
   text: InputTextWithErrors,
+  location: InputLocation,
   textarea: InputTextAreaWithErrors,
   toggle: InputToggleWithErrors,
 };
@@ -56,6 +58,9 @@ function InputsIndex(props) {
       break;
     case 'json':
       inputValue = isObject(props.value) ? props.value : null;
+      break;
+    case 'location':
+      inputValue = {type: 'Point', coordinates: [props.value.lat, props.value.long]};
       break;
     default:
       inputValue = props.value || '';

@@ -33,6 +33,8 @@ module.exports = mongoose => {
           return 'Number';
         case 'uuid':
           return 'ObjectId';
+        case 'object':
+          return 'object';
         case 'email':
         case 'enumeration':
         case 'password':
